@@ -6,8 +6,8 @@ services:
 
 install:
 
-  - docker build -t muneeza/multi-nginx ./nginx
-  - docker build -t muneeza/multi-server ./server
+  - docker build -t jenkinsdoc1/multi-nginx ./nginx
+  - docker build -t jenkinsdoc1/multi-server ./server
 
 
 
@@ -16,5 +16,5 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
 
-  - docker push muneeza/multi-nginx
-  - docker push muneeza/multi-server
+  - docker push jenkinsdoc1/multi-nginx
+  - docker push jenkinsdoc1/multi-server
