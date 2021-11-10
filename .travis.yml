@@ -5,7 +5,9 @@ services:
   - docker
 
 install:
-  
+  - docker build -t muneeza/multi-client ./client
+  - docker build -t muneeza/multi-nginx ./nginx
+  - docker build -t muneeza/multi-server ./server
 
 
 
