@@ -5,7 +5,7 @@ services:
   - docker
 
 install:
-  - docker build -t jenkinsdoc1/multi-server ./client
+  - docker build -t jenkinsdoc1/multi-client ./client
   - docker build -t jenkinsdoc1/multi-nginx ./nginx
   - docker build -t jenkinsdoc1/multi-server ./server
 
