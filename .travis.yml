@@ -5,7 +5,7 @@ services:
   - docker
 
 install:
-
+  - docker build -t jenkinsdoc1/multi-server ./client
   - docker build -t jenkinsdoc1/multi-nginx ./nginx
   - docker build -t jenkinsdoc1/multi-server ./server
 
@@ -15,6 +15,6 @@ after_success:
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-
+  - docker push jenkinsdoc1/multi-client
   - docker push jenkinsdoc1/multi-nginx
   - docker push jenkinsdoc1/multi-server
