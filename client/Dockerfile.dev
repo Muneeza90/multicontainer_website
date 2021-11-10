@@ -1,0 +1,12 @@
+FROM node:alpine
+WORKDIR '/app'
+# install dependencies
+
+# segment out copy option so that wyou don't install dependencies everytime you make a change to index file
+COPY package.json . 
+RUN npm install
+
+COPY . .
+
+# Default command
+CMD ["npm","run","start"]
